@@ -436,7 +436,15 @@
       treesitter.enable = true;
       luasnip.enable = true;
       which-key.enable = true;
-      lazygit.enable = true;
+      lazygit = {
+        enable = true;
+        floating_window_use_plenary = false;
+        extraConfig = ''
+          keys = {
+            { "<leader>gg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
+          }
+        '';
+      };
       lsp = {
         enable = true;
         servers = {
