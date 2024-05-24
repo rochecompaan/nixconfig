@@ -247,15 +247,6 @@
       MANWIDTH = "999";
       GOPATH = "$HOME/.local/share/go";
       # FPATH = "$HOME/tools/eza/completions/zsh";
-      AGIBASE_PASSWORD_STORE = "$HOME/projects/agibase-secrets/.password-store";
-      WEATHERATE_PASSWORD_STORE = "$HOME/projects/weatherate-secrets/.password-store";
-      DOCKER_BUILDKIT = "1";
-      KUBECONFIG = "/home/roche/.kube/config:/home/roche/.kube/config.agibase_ec2:/home/roche/.kube/config.webcloud7:/home/roche/.kube/config.sidecar:/home/roche/.kube/config.sfu-crossplane:/home/roche/.kube/config.raspi";
-      ONEDRIVE_DATA_DIR = "$HOME/OneDrive";
-      ONEDRIVE_UID = "100";
-      ONEDRIVE_GID = "1000";
-      ANDROID_HOME = "$HOME/Android/Sdk";
-      CAPACITOR_ANDROID_STUDIO_PATH = "/usr/bin/android-studio";
     };
 
     shellAliases = {
