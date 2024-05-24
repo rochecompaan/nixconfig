@@ -298,7 +298,6 @@
       iplocal="ip -json route get 8.8.8.8 | jq -r '.[].prefsrc'";
 
       ssh="TERM=xterm-256color ssh";
-      onedrive="docker run -d -it --rm --name onedrive -v onedrive_conf:/onedrive/conf -v $\{ONEDRIVE_DATA_DIR\}:/onedrive/data -e ONEDRIVE_UID=$\{ONEDRIVE_UID\} -e ONEDRIVE_GID=$\{ONEDRIVE_GID\} driveone/onedrive:latest";
 
       # show history from first entry
       history="history 1";
