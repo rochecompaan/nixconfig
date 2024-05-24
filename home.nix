@@ -428,6 +428,7 @@
     ];
 
     plugins = {
+      auto-session.enable = true;
       lightline.enable = true;
       fugitive.enable = true;
       sleuth.enable = true;
