@@ -417,6 +417,16 @@
 
     };
 
+    keymaps = [
+      {
+        action = "<cmd>LazyGit<CR>";
+        key = "<leader>gg";
+        options = {
+          desc = "LazyGit";
+        };
+      }
+    ];
+
     plugins = {
       lightline.enable = true;
       fugitive.enable = true;
@@ -428,12 +438,9 @@
       which-key.enable = true;
       lazygit = {
         enable = true;
-        floating_window_use_plenary = false;
-        extraConfig = ''
-          keys = {
-            { "<leader>gg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
-          }
-        '';
+        settings = {
+          floating_window_use_plenary = false;
+        };
       };
       lsp = {
         enable = true;
