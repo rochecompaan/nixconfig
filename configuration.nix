@@ -55,6 +55,7 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  services.onedrive.enable = true;
 
   security.rtkit.enable = true;
   services.pipewire = {
