@@ -87,44 +87,25 @@
   # $ nix search wget
 
   environment.systemPackages = with pkgs; [
-    brave
     bat
     btop
-    clipman
-    cliphist
     dig
-    discord
-    dolphin
-    docker
-    docker-compose
-    dunst
     eza
-    firefox
     git
-    grimblast
-    hyprpaper
     k9s
     killall
-    kitty
     kubectl
     lazygit
-    libreoffice-fresh
     openvpn3
-    slack
     slurp
     starship
     pass
     pavucontrol
     pciutils
     usbutils
-    waybar
-    wl-clipboard
-    wl-clip-persist
     wget
-    wofi
     zellij
     zoxide
-    zoom-us
   ];
 
   fonts.packages = with pkgs; [
