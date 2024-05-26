@@ -112,7 +112,6 @@
     cliphist
     dig
     discord
-    dolphin
     docker
     docker-compose
     dunst
@@ -135,6 +134,7 @@
     wl-clip-persist
     wget
     wofi
+    yazi
     zellij
     zoom-us
   ];
