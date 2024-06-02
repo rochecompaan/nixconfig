@@ -474,6 +474,9 @@
             };
             sources = [
               {
+                name = "path";
+              }
+              {
                 name = "buffer";
               }
               {
