@@ -308,6 +308,7 @@
 
       myip="curl -s checkip.amazonaws.com";
 
+      nb="sudo nixos-rebuild switch --flake .#djangf8sum";
     };
 
     zplug = {
