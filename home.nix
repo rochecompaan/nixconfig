@@ -571,7 +571,7 @@
           "<leader><space>" = {
             action = "buffers";
             options = {
-              desc = "Find buffers";
+              desc = "Find Buffers";
             };
           };
         };
