@@ -574,6 +574,18 @@
               desc = "Find Buffers";
             };
           };
+          "<leader>fd" = {
+            action = "diagnostics";
+            options = {
+              desc = "Find Diagnostics";
+            };
+          };
+          "<leader>fr" = {
+            action = "resume";
+            options = {
+              desc = "Find Resume";
+            };
+          };
         };
       };
 
