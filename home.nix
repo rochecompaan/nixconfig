@@ -530,6 +530,7 @@
 
       telescope = {
         enable = true;
+        extensions.fzf-native.enable = true;
         keymaps = {
           "<leader>ff" = {
             action = "find_files";
