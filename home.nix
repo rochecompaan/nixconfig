@@ -530,50 +530,46 @@
       telescope = {
         enable = true;
         keymaps = {
-          "<C-p>" = {
+          "<leader>ff" = {
+            action = "find_files";
+            options = {
+              desc = "Telescope Find Files";
+            };
+          };
+          "<leader>gf" = {
             action = "git_files";
             options = {
               desc = "Telescope Git Files";
             };
           };
-          "<leader>fg" = "live_grep";
-          "<leader>?" = {
+          "<leader>fg" = {
+            action = "live_grep";
+            options = {
+              desc = "Telescope Live Grep";
+            };
+          };
+          "<leader>fo" = {
             action = "oldfiles";
             options = {
-              desc = "[?] Find recently opened files";
+              desc = "Find recently opened files";
+            };
+          };
+          "<leader>fw" = {
+            action = "grep_string";
+            options = {
+              desc = "Find current word";
+            };
+          };
+          "<leader>f/" = {
+            action = "live_grep";
+            options = {
+              desc = "Live Grep in Open Files";
             };
           };
           "<leader><space>" = {
             action = "buffers";
             options = {
-              desc = "[ ] Find existing buffers";
-            };
-          };
-        };
-        settings.defaults = {
-          mappings = {
-            n = {
-              "<leader>/" = {
-                __raw = ''
-                  function()
-                    require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-                      winblend = 10,
-                      previewer = false,
-                    })
-                  end
-                '';
-              };
-
-              "<leader>s/" = {
-                __raw = ''
-                  function ()
-                    require('telescope.builtin').live_grep {
-                      grep_open_files = true,
-                      prompt_title = 'Live Grep in Open Files',
-                    }
-                  end
-                '';
-              };
+              desc = "Find buffers";
             };
           };
         };
