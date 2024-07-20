@@ -598,7 +598,7 @@
 
     # tpope/vim-rhubarb
 
-    colorschemes.tokyonight.enable = true;
+    colorschemes.gruvbox.enable = true;
 
     # Sync clipboard between OS and Neovim.
     #  Remove this option if you want your OS clipboard to remain independent.
