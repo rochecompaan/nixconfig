@@ -537,7 +537,7 @@
         enable = true;
         extensions.fzf-native.enable = true;
         keymaps = {
-          "<leader>ff" = {
+          "<leader>sf" = {
             action = "find_files";
             options = {
               desc = "Telescope Find Files";
@@ -549,25 +549,25 @@
               desc = "Telescope Git Files";
             };
           };
-          "<leader>fg" = {
+          "<leader>sg" = {
             action = "live_grep";
             options = {
               desc = "Telescope Live Grep";
             };
           };
-          "<leader>fo" = {
+          "<leader>so" = {
             action = "oldfiles";
             options = {
               desc = "Find recently opened files";
             };
           };
-          "<leader>fw" = {
+          "<leader>sw" = {
             action = "grep_string";
             options = {
               desc = "Find current word";
             };
           };
-          "<leader>f/" = {
+          "<leader>s/" = {
             action = "live_grep";
             options = {
               desc = "Live Grep in Open Files";
@@ -579,13 +579,13 @@
               desc = "Find Buffers";
             };
           };
-          "<leader>fd" = {
+          "<leader>sd" = {
             action = "diagnostics";
             options = {
               desc = "Find Diagnostics";
             };
           };
-          "<leader>fr" = {
+          "<leader>sr" = {
             action = "resume";
             options = {
               desc = "Find Resume";
