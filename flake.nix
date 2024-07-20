@@ -9,31 +9,28 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixvim.url = "github:rochecompaan/nixvim";
   };
 
   outputs = { self, hyprland, nixpkgs, nixos-hardware, home-manager, nixvim, ... }@inputs: {
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
+      specialArgs = { inherit inputs; };
       modules = [
         ./configuration.nix
         inputs.home-manager.nixosModules.default
       ];
     };
     nixosConfigurations.djangf8sum = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
+      specialArgs = { inherit inputs; };
       modules = [
         ./configuration.nix
         nixos-hardware.nixosModules.asus-zephyrus-ga402x.nvidia
         home-manager.nixosModules.default
         {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.roche = import ./home.nix;
-            home-manager.extraSpecialArgs = {inherit inputs;};
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.roche = import ./home.nix;
+          home-manager.extraSpecialArgs = { inherit inputs; };
         }
         hyprland.nixosModules.default
         {
