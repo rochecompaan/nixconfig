@@ -302,9 +302,9 @@
       # show history from first entry
       history="history 1";
 
-      vpon="openvpn3 session-start --config ~/.config/openvpn/sfu.ovpn";
-      vpoff="openvpn3 session-manage --disconnect --config ~/.config/openvpn/sfu.ovpn";
-      vpstats="openvpn3 sessions-list";
+      vpnon="openvpn3 session-start --config ~/.config/openvpn/sfu.ovpn";
+      vpnoff="openvpn3 session-manage --disconnect --config ~/.config/openvpn/sfu.ovpn";
+      vpnstats="openvpn3 sessions-list";
 
       myip="curl -s checkip.amazonaws.com";
 
