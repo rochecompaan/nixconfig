@@ -9,7 +9,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixvim.url = "github:rochecompaan/nixvim";
+    nixvim.url = "github:rochecompaan/nixvim?rev=b16f03513e9a2ab1688819e96ff22e1eec021c18";
   };
 
   outputs = { self, hyprland, nixpkgs, nixos-hardware, home-manager, nixvim, ... }@inputs: {
