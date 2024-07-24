@@ -56,12 +56,12 @@
     # networking tools
     mtr # A network diagnostic tool
     iperf3
-    dnsutils  # `dig` + `nslookup`
+    dnsutils # `dig` + `nslookup`
     ldns # replacement of `dig`, it provide the command `drill`
     aria2 # A lightweight multi-protocol & multi-source command-line download utility
     socat # replacement of openbsd-netcat
     nmap # A utility for network discovery and security auditing
-    ipcalc  # it is a calculator for the IPv4/v6 addresses
+    ipcalc # it is a calculator for the IPv4/v6 addresses
 
     # misc
     cowsay
@@ -83,7 +83,7 @@
     # productivity
     glow # markdown previewer in terminal
 
-    btop  # replacement of htop/nmon
+    btop # replacement of htop/nmon
     iotop # io monitoring
     iftop # network monitoring
 
@@ -147,7 +147,7 @@
   programs.starship = {
     enable = true;
     settings = {
-      add_newline = false;
+      add_newline = true;
       aws.disabled = true;
       gcloud.disabled = true;
       line_break.disabled = true;
@@ -195,6 +195,11 @@
         format = "[$duration]($style) ";
         style = "yellow";
       };
+      nix_shell = {
+        disabled = false;
+        impure_msg = "i";
+        format = "via [$symbol$state](bold blue) ";
+      };
       python = {
         style = "bright-green";
       };
@@ -205,7 +210,7 @@
       };
       custom.aws = {
         command = "echo $AWS_PROFILE";
-        detect_files = [];
+        detect_files = [ ];
         when = " test \"$AWS_PROFILE\" != \"\" ";
         style = "bold blue";
         format = "on [$symbol($output )]($style)";
@@ -248,65 +253,65 @@
     };
 
     shellAliases = {
-      g="lazygit";
-      k="kubectl";
-      ksy="kubectl -n kube-system";
-      kgp="kubectl get pods";
-      kgs="kubectl get services";
+      g = "lazygit";
+      k = "kubectl";
+      ksy = "kubectl -n kube-system";
+      kgp = "kubectl get pods";
+      kgs = "kubectl get services";
 
       # Colorize grep output (good for log files)
-      grep="grep --color=auto";
-      egrep="egrep --color=auto";
-      fgrep="fgrep --color=auto";
+      grep = "grep --color=auto";
+      egrep = "egrep --color=auto";
+      fgrep = "fgrep --color=auto";
 
       # confirm before overwriting something
-      cp="cp -i";
-      mv="mv -i";
-      rm="rm -i";
+      cp = "cp -i";
+      mv = "mv -i";
+      rm = "rm -i";
 
       # easier to read disk
-      df="df -h";     # human-readable sizes
-      free="free -m"; # show sizes in MB
+      df = "df -h"; # human-readable sizes
+      free = "free -m"; # show sizes in MB
 
       # get top process eating memory
-      psmem="ps auxf | sort -nr -k 4 | head -5";
+      psmem = "ps auxf | sort -nr -k 4 | head -5";
 
       # get top process eating cpu ##
-      pscpu="ps auxf | sort -nr -k 3 | head -5";
+      pscpu = "ps auxf | sort -nr -k 3 | head -5";
 
       # gpg encryption
       # verify signature for isos
-      gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify";
+      gpg-check = "gpg2 --keyserver-options auto-key-retrieve --verify";
       # receive the key of a developer
-      gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys";
+      gpg-retrieve = "gpg2 --keyserver-options auto-key-retrieve --receive-keys";
 
-      cat="bat -pp --theme \"Visual Studio Dark+\"";
-      catt="bat --theme \"Visual Studio Dark+\"";
-      ls="exa";
-      ll="ls -alF";
-      la="ls -A";
-      l="ls -CF";
-      dotup="pushd ~/projects/dotfiles/ && git pull && stow -t $HOME --ignore=.xinitrc */ && popd";
-      tt="docker run --rm -v $HOME/projects/timetransfer:/src -it time-transfer today";
-      tty="docker run --rm -v $HOME/projects/timetransfer:/src -it time-transfer yesterday";
-      tton="docker run --rm -v $HOME/projects/timetransfer:/src -it time-transfer on";
-      terraform="tofu";
-      tfplan="tofu plan -out=\"tfplan.out\" && tofu show -no-color tfplan.out >> .terraform/tfplan-$(date +%Y%m%d-%H%M%S).log";
-      tfapply="tofu apply \"tfplan.out\"";
-      iplocal="ip -json route get 8.8.8.8 | jq -r '.[].prefsrc'";
+      cat = "bat -pp --theme \"Visual Studio Dark+\"";
+      catt = "bat --theme \"Visual Studio Dark+\"";
+      ls = "exa";
+      ll = "ls -alF";
+      la = "ls -A";
+      l = "ls -CF";
+      dotup = "pushd ~/projects/dotfiles/ && git pull && stow -t $HOME --ignore=.xinitrc */ && popd";
+      tt = "docker run --rm -v $HOME/projects/timetransfer:/src -it time-transfer today";
+      tty = "docker run --rm -v $HOME/projects/timetransfer:/src -it time-transfer yesterday";
+      tton = "docker run --rm -v $HOME/projects/timetransfer:/src -it time-transfer on";
+      terraform = "tofu";
+      tfplan = "tofu plan -out=\"tfplan.out\" && tofu show -no-color tfplan.out >> .terraform/tfplan-$(date +%Y%m%d-%H%M%S).log";
+      tfapply = "tofu apply \"tfplan.out\"";
+      iplocal = "ip -json route get 8.8.8.8 | jq -r '.[].prefsrc'";
 
-      ssh="TERM=xterm-256color ssh";
+      ssh = "TERM=xterm-256color ssh";
 
       # show history from first entry
-      history="history 1";
+      history = "history 1";
 
-      vpnon="openvpn3 session-start --config ~/.config/openvpn/sfu.ovpn";
-      vpnoff="openvpn3 session-manage --disconnect --config ~/.config/openvpn/sfu.ovpn";
-      vpnstats="openvpn3 sessions-list";
+      vpnon = "openvpn3 session-start --config ~/.config/openvpn/sfu.ovpn";
+      vpnoff = "openvpn3 session-manage --disconnect --config ~/.config/openvpn/sfu.ovpn";
+      vpnstats = "openvpn3 sessions-list";
 
-      myip="curl -s checkip.amazonaws.com";
+      myip = "curl -s checkip.amazonaws.com";
 
-      nb="sudo nixos-rebuild switch --flake .#djangf8sum";
+      nb = "sudo nixos-rebuild switch --flake .#djangf8sum";
     };
 
     zplug = {
