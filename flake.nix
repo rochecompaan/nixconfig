@@ -2,7 +2,8 @@
   description = "Nixos config flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     hyprland = {
       type = "git";
